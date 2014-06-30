@@ -6,7 +6,7 @@ Qt Palette Color Picker
 A palette color picker  with palette and preview for Qt.
 
 A goal of this simple widget is to provide a simple color picker with palette editing capabilities.
-To add it to project, you can just copy files from it to project.
+To add it to project, you can just copy files from this repository to your project.
 
 #### The differences between standard QColorDialog and this project:
 
