@@ -8,7 +8,7 @@ A palette color picker  with palette and preview for Qt.
 A goal of this simple widget is to provide a simple color picker with palette editing capabilities.
 To add it to project, you can just copy files from it to project.
 
-The differences between standard QColorDialog and this project:
+#### The differences between standard QColorDialog and this project:
 
 * A widget, not a dialog
 * A palette cells is near each other, so you can see, how colors are contrasting which each other
@@ -16,9 +16,15 @@ The differences between standard QColorDialog and this project:
 * You can edit alpha channel value for color
 * You can use WASD and 'F', 'R', 'T', 'G' keys to edit color of selected palette cell, when clicked on widget
 
-The differences between https://github.com/mbasaglia/Qt-Color-Picker and this project:
+
+#### The differences between https://github.com/mbasaglia/Qt-Color-Picker and this project:
 
 * Different color wheel visualisation
 * More oriented for working with palette, than single color
+
+
+#### Projects, that use Qt Palette Color Picker:
+
+* Saddy (https://code.google.com/p/saddy/)
 
 
