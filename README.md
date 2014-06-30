@@ -1,4 +1,4 @@
-qt-palette-color-picker
+Qt Palette Color Picker
 =======================
 
 ![A preview for Qt Palette Color Picker](https://trello-attachments.s3.amazonaws.com/503608c12380a31f336bde54/53b04363ff70f412f5ef6ed5/269x188/452033f845bc29c77844ee813274b6bd/screenshot.PNG "A preview for Qt Palette Color Picker")
