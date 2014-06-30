@@ -11,16 +11,15 @@ To add it to project, you can just copy files from this repository to your proje
 #### The differences between standard QColorDialog and this project:
 
 * A widget, not a dialog
-* A palette cells is near each other, so you can see, how colors are contrasting which each other
-* If a palette is to small for you, you can see palette cell's near selected at bottom left corner
-* You can edit alpha channel value for color
-* You can use WASD and 'F', 'R', 'T', 'G' keys to edit color of selected palette cell, when clicked on widget
+* A palette cells are placed near each other, so you can see, how colors are contrasting which each other
+* If a palette is too small for you, you can see cells from it, along with selected cell in preview part, located at bottom left corner
+* You can use WASD keys to move selection cursor on the color wheel, FR keys to increase or decrease lightness, TG keys to increase or decrease alpha channel, changing color of selected palette cell, after you click on the widget.
 
 
 #### The differences between https://github.com/mbasaglia/Qt-Color-Picker and this project:
 
 * Different color wheel visualisation
-* More oriented for working with palette, than single color
+* More oriented for working with palette, than working with single color
 
 
 #### Projects, that use Qt Palette Color Picker:
