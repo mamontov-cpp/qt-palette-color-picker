@@ -1,8 +1,9 @@
-/*! \file colorpicker\colorpicker.h
+/*! \file colorpicker.h
 	\author HiddenSeeker
 
 	Describes a widget, which performs color picking
  */
+#pragma once
 #include <QTableWidget>
 #include <QGridLayout>
 #include <QLabel>
@@ -231,7 +232,7 @@ protected:
 	QTableWidget* m_preview;
 	/*! A hash, where key is pair (lightness, alpha) and color wheel is value
 	 */
-	QHash<int, QHash<int, QImage> > m_color_wheels;
+	QHash<int, QHash<int, QImage*> > m_color_wheels;
 	/*! Lightness image
 	 */
 	QImage* m_lightness_image;
