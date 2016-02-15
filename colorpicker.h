@@ -1,4 +1,4 @@
-/*! \file colorpicker\colorpicker.h
+/*! \file qt-palette-color-picker\colorpicker.h
     
 
     Describes a widget, which performs color picking
