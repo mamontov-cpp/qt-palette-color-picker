@@ -37,7 +37,7 @@ int gui::colorpicker::ColorPicker::AlphaGradientHeight = 5;
 
 int gui::colorpicker::ColorPicker::ColorWheelSelectionSize = 3;
 
-gui::colorpicker::ColorPicker::ColorPicker(QWidget * parent) 
+gui::colorpicker::ColorPicker::ColorPicker(QWidget* parent) 
 : QWidget(parent)
 {
     m_removing_data = false;
@@ -111,7 +111,7 @@ gui::colorpicker::ColorPicker::ColorPicker(QWidget * parent)
 
 QColor gui::colorpicker::ColorPicker::selectedColor() const
 {
-    QList<QTableWidgetItem *> items = m_palette->selectedItems();
+    QList<QTableWidgetItem*> items = m_palette->selectedItems();
     if (items.count())
     {
         QColor result = items[0]->background().color();
@@ -160,7 +160,7 @@ void gui::colorpicker::ColorPicker::setSelectedColor(const QColor & c)
     }
     else
     {
-        QList<QTableWidgetItem *> items = m_palette->selectedItems();
+        QList<QTableWidgetItem*> items = m_palette->selectedItems();
         int row = 0;
         int column = 0;
         if (items.count() != 0)
@@ -175,7 +175,7 @@ void gui::colorpicker::ColorPicker::setSelectedColor(const QColor & c)
             bool b = m_palette->blockSignals(true);
             m_palette->setCurrentCell(0, 0);
             m_palette->blockSignals(b);
-            QTableWidgetItem * item = m_palette->item(0, 0);
+            QTableWidgetItem* item = m_palette->item(0, 0);
             item->setBackground(c);
         }
         updateFullPreviewTable(row, column);
@@ -289,7 +289,7 @@ gui::colorpicker::ColorPicker::~ColorPicker()
     }
 }
 
-void gui::colorpicker::ColorPicker::paletteItemChanged(QTableWidgetItem * current, QTableWidgetItem * previous)
+void gui::colorpicker::ColorPicker::paletteItemChanged(QTableWidgetItem* current, QTableWidgetItem*)
 {
     if (m_removing_data)
         return;
@@ -448,7 +448,7 @@ void  gui::colorpicker::ColorPicker::alphaChanged(int v)
     emit selectedColorChanged(color);
 }
 
-void gui::colorpicker::ColorPicker::paintEvent(QPaintEvent * e)
+void gui::colorpicker::ColorPicker::paintEvent(QPaintEvent* e)
 {
     {
         QPainter qpainter (this);
@@ -521,7 +521,7 @@ void gui::colorpicker::ColorPicker::paintEvent(QPaintEvent * e)
     this->QWidget::paintEvent(e);
 }
 
-void	gui::colorpicker::ColorPicker::keyPressEvent(QKeyEvent * e)
+void	gui::colorpicker::ColorPicker::keyPressEvent(QKeyEvent* e)
 {
     QColor c = this->selectedColor();
     bool must_handle = false;
@@ -608,21 +608,21 @@ void	gui::colorpicker::ColorPicker::keyPressEvent(QKeyEvent * e)
     this->QWidget::keyPressEvent(e);
 }
 
-void gui::colorpicker::ColorPicker::resizeEvent(QResizeEvent * e)
+void gui::colorpicker::ColorPicker::resizeEvent(QResizeEvent* e)
 {
     QRect oldrect = this->geometry();
     QRect r(oldrect.x(), oldrect.y(), e->size().width(), e->size().height());
     resizeWidgets(r);
 }
 
-void gui::colorpicker::ColorPicker::moveEvent(QMoveEvent * e)
+void gui::colorpicker::ColorPicker::moveEvent(QMoveEvent* e)
 {
     QRect oldrect = this->geometry();	
     QRect r(e->pos().x(), e->pos().y(), oldrect.width(), oldrect.height());
     resizeWidgets(r);
 }
 
-void gui::colorpicker::ColorPicker::mouseMoveEvent(QMouseEvent * e)
+void gui::colorpicker::ColorPicker::mouseMoveEvent(QMouseEvent* e)
 {
     if (e->buttons() & Qt::LeftButton)
     {
@@ -631,7 +631,7 @@ void gui::colorpicker::ColorPicker::mouseMoveEvent(QMouseEvent * e)
     this->QWidget::mouseMoveEvent(e);
 }
 
-void gui::colorpicker::ColorPicker::mousePressEvent(QMouseEvent * e)
+void gui::colorpicker::ColorPicker::mousePressEvent(QMouseEvent* e)
 {
     setFocus();
     if (e->buttons() & Qt::LeftButton)
@@ -681,7 +681,7 @@ void gui::colorpicker::ColorPicker::createPreviewCells()
     {
         for(int j = 0; j < m_preview->columnCount(); j++)
         {
-            QTableWidgetItem * item = new  QTableWidgetItem();
+            QTableWidgetItem* item = new  QTableWidgetItem();
             item->setFlags(item->flags() 
                          & ~Qt::ItemIsEditable 
                          & ~Qt::ItemIsSelectable
@@ -698,7 +698,7 @@ void gui::colorpicker::ColorPicker::initRandomPaletteAndMakeCellsNonEditable()
     {
         for(int j = 0; j < m_palette->columnCount(); j++)
         {
-            QTableWidgetItem * item = new  QTableWidgetItem();
+            QTableWidgetItem* item = new  QTableWidgetItem();
             item->setBackground(
                 QColor( rand() % 255, rand() % 255, rand() % 255, rand() % 255)
             );
@@ -712,7 +712,7 @@ void gui::colorpicker::ColorPicker::fillRow(int row)
 {
     for(int j = 0; j < m_palette->columnCount(); j++)
     {
-        QTableWidgetItem * item = new  QTableWidgetItem();
+        QTableWidgetItem* item = new  QTableWidgetItem();
         item->setBackground(
             QColor(255, 255, 255)
         );
@@ -727,15 +727,15 @@ void gui::colorpicker::ColorPicker::shiftRows()
     {
         for(int j = 0; j < m_palette->columnCount(); j++)
         {
-            QTableWidgetItem * previtem = m_palette->item(i - 1, j);
-            QTableWidgetItem * curitem = m_palette->item(i, j);
+            QTableWidgetItem* previtem = m_palette->item(i - 1, j);
+            QTableWidgetItem* curitem = m_palette->item(i, j);
             curitem->setBackground(previtem->background());			
         }
     }
 
     for(int j = 0; j < m_palette->columnCount(); j++)
     {
-        QTableWidgetItem * curitem = m_palette->item(0, j);
+        QTableWidgetItem* curitem = m_palette->item(0, j);
         curitem->setBackground(QColor(255, 255, 255));			
     }
 }
@@ -744,7 +744,7 @@ void gui::colorpicker::ColorPicker::fillColumn(int column)
 {
     for(int j = 0; j < m_palette->rowCount(); j++)
     {
-        QTableWidgetItem * item = new  QTableWidgetItem();
+        QTableWidgetItem* item = new  QTableWidgetItem();
         item->setBackground(
             QColor(255, 255, 255)
         );
@@ -759,15 +759,15 @@ void gui::colorpicker::ColorPicker::shiftColumns()
     {
         for(int j = 0; j < m_palette->rowCount(); j++)
         {
-            QTableWidgetItem * previtem = m_palette->item(j, i - 1);
-            QTableWidgetItem * curitem = m_palette->item(j, i);
+            QTableWidgetItem* previtem = m_palette->item(j, i - 1);
+            QTableWidgetItem* curitem = m_palette->item(j, i);
             curitem->setBackground(previtem->background());			
         }
     }
 
     for(int j = 0; j < m_palette->rowCount(); j++)
     {
-        QTableWidgetItem * curitem = m_palette->item(j, 0);
+        QTableWidgetItem* curitem = m_palette->item(j, 0);
         curitem->setBackground(QColor(255, 255, 255));			
     }
 }
@@ -831,7 +831,7 @@ void gui::colorpicker::ColorPicker::updateColorsInPalettePreviewColorWheel(const
             .arg(c.blue())
             .arg(c.alpha())
     );
-    QList<QTableWidgetItem *> items = m_palette->selectedItems();
+    QList<QTableWidgetItem*> items = m_palette->selectedItems();
     if (items.size() != 0) {
         items[0]->setBackground(c);
     }
