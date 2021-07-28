@@ -115,27 +115,27 @@ protected:
     /*! Paints color picker's palette and parts near palette
         \param[in] e event
      */
-    virtual void paintEvent(QPaintEvent* e);
+    virtual void paintEvent(QPaintEvent* e) override;
     /*! Handle moving up and down on key press
         \param[in] e event
      */ 
-    virtual void keyPressEvent(QKeyEvent* e);
+    virtual void keyPressEvent(QKeyEvent* e) override;
     /*! Handles resize, resizing elements
         \param[in] e event
      */
-    virtual void resizeEvent(QResizeEvent* e);
+    virtual void resizeEvent(QResizeEvent* e) override;
     /*! Handles movement, moving elements
         \param[in] e event
      */
-    virtual void moveEvent(QMoveEvent* e);
+    virtual void moveEvent(QMoveEvent* e) override;
     /*! Handles mouse move event
         \param[in] e event
      */
-    virtual void mouseMoveEvent (QMouseEvent* e);
+    virtual void mouseMoveEvent (QMouseEvent* e) override;
     /*! Handles mouse press event
         \param[in] e event
      */
-    virtual void mousePressEvent(QMouseEvent* e);
+    virtual void mousePressEvent(QMouseEvent* e) override;
     /*! Resizes widgets, making them fit to tree
         \param[in] r a rectangle
      */

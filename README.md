@@ -24,6 +24,9 @@ To add it to project, you can just copy files from this repository to your proje
 
 #### Projects, that use Qt Palette Color Picker:
 
-* Saddy (https://code.google.com/p/saddy/)
+* Saddy Graphics Engine (https://github.com/mamontov-cpp/saddy-graphics-engine-2d)
 
+### How to build
 
+Use qt-palette-color-picker.pro . But you can just copy and paste the sources in your project.
+ 
