@@ -42,8 +42,8 @@ gui::colorpicker::ColorPicker::ColorPicker(QWidget* parent)
 {
     m_removing_data = false;
     m_force_selection = false;
-    m_lightness_image = NULL;
-    m_alpha_image = NULL;
+    m_lightness_image = nullptr;
+    m_alpha_image = nullptr;
     m_do_not_expand_table = false;
     
     m_palette = new QTableWidget(parent);

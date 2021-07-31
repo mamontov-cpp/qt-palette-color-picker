@@ -48,7 +48,7 @@ public:
     void setPalette(const QList<QList<QColor> > & palette);
     /*! Destroys data from a widget
      */
-    ~ColorPicker();
+    ~ColorPicker() override;
 signals: 
     /*! A signal, emitted when color is changed
      */
@@ -143,11 +143,11 @@ protected:
     /*! Creates a preview cells for color picker
      */
     void createPreviewCells();
-    /*! Inits palette in picker and makes cells non-editable
+    /*! Initializes palette in picker and makes cells non-editable
      */
     void initRandomPaletteAndMakeCellsNonEditable();
     /*! Fills row with items
-        \param[in] row row inde
+        \param[in] row row index
      */
     void fillRow(int row);
     /*! Shifts rows down and fills first with white cells
