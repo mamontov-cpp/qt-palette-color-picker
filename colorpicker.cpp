@@ -627,6 +627,7 @@ void gui::colorpicker::ColorPicker::mouseMoveEvent(QMouseEvent* e)
     if (e->buttons() & Qt::LeftButton)
     {
         this->handleMouseEvents(e);
+        return;
     }
     this->QWidget::mouseMoveEvent(e);
 }
@@ -637,6 +638,7 @@ void gui::colorpicker::ColorPicker::mousePressEvent(QMouseEvent* e)
     if (e->buttons() & Qt::LeftButton)
     {
         this->handleMouseEvents(e);
+        return;
     }
     this->QWidget::mousePressEvent(e);
 }
