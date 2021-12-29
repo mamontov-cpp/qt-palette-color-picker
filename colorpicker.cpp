@@ -45,7 +45,10 @@ gui::colorpicker::ColorPicker::ColorPicker(QWidget* parent)
     m_lightness_image = nullptr;
     m_alpha_image = nullptr;
     m_do_not_expand_table = false;
-    
+
+    m_row_to_be_set = 0;
+    m_col_to_be_set = 0;
+
     m_palette = new QTableWidget(parent);
     m_palette->horizontalHeader()->hide();
     m_palette->verticalHeader()->hide();
